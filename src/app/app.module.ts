@@ -7,6 +7,10 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
+import { SearchComponent } from './search/search.component';
+import { HistoryComponent } from './history/history.component';
+import { HomeComponent } from './home/home.component';
+import { ShareComponent } from './share/share.component';
 
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http, 'assets/translations/', '-lang.json');
@@ -15,7 +19,11 @@ export function HttpLoaderFactory(http: Http) {
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
+    SearchComponent,
+    HistoryComponent,
+    HomeComponent,
+    ShareComponent
   ],
   imports: [
     BrowserModule,
