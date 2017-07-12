@@ -1,0 +1,10 @@
+{
+  "app": {
+    "navbar": {
+      "home": "Home",
+      "about": "About me",
+      "projects": "My projects",
+      "blog": "My blog"
+    }
+  }
+}
