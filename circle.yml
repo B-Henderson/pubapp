@@ -1,0 +1,17 @@
+machine:
+  node:
+    version: 7.9.0
+dependencies:
+  pre:
+    - ls
+    - npm install npm@latest -g
+    - npm install angular-cli@latest -g
+    - npm install
+
+  post:
+    - npm run test
+    - npm run build:prod
+general:
+  branches:
+    only: 
+      - master
