@@ -9,13 +9,13 @@
         "name": "Search",
         "icon": "search"
       },
-      "search": {
-        "name": "Search",
-        "icon": "search"
+      "recent": {
+        "name": "Recent",
+        "icon": "history"
       },
-      "search": {
-        "name": "Search",
-        "icon": "search"
+      "share": {
+        "name": "Share",
+        "icon": "share"
       }
     }
   }
