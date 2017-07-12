@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd  } from '@angular/router';
+
 
 @Component({
   selector: 'app-nav',
@@ -7,18 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 menuState: boolean = false;
-
-	toggleMenu(){
+currentRoute: string = '';
+	toggleMenu = () => {
 		this.menuState = (this.menuState === false ? true : false);
-    console.log('hitting here', this.menuState);
 	}
 
 
-  constructor() {
+
+  constructor(private _router: Router) {
+    _router.events.subscribe((value) => {
+      if( value instanceof NavigationEnd){       
+        this.currentRoute = value.urlAfterRedirects;
+      }      
+    })
 
    }
 
   ngOnInit() {
+
   }
 
 }

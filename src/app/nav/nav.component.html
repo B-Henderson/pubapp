@@ -3,21 +3,19 @@
         <a class="navbar-item" href="http://bulma.io">
             <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
         </a>
-        <div class="nav-start">
-            <div class="navbar-burger" (click)="toggleMenu();" [ngClass]="{'is-active': menuState}">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        <div class="navbar-burger navbar-end" (click)="toggleMenu();" [ngClass]="{'is-active': menuState}">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </div>
     <!-- TODO: generate from file later -->
     <div class="navbar-menu" [ngClass]="{'is-active': menuState}">
         <div class="navbar-end ">
-            <a class="navbar-item"><i class="fa fa-{{'app.navbar.home.icon' | translate}}" aria-hidden="true"></i>{{ 'app.navbar.home.name' | translate  }}</a>
-            <a class="navbar-item"><i class="fa fa-{{'app.navbar.search.icon' | translate}}" aria-hidden="true"></i>{{ 'app.navbar.search.name' | translate  }}</a>
-            <a class="navbar-item"><i class="fa fa-{{'app.navbar.search.icon' | translate}}" aria-hidden="true"></i>{{ 'app.navbar.home.name' | translate  }}</a>
-            <a class="navbar-item"><i class="fa fa-{{'app.navbar.home.icon' | translate}}" aria-hidden="true"></i>{{ 'app.navbar.home.name' | translate  }}</a>
+            <a class="navbar-item" routerLink="/home" [ngClass]="{'is-active': currentRoute ==='/home' ? true : false}"><i class="fa fa-{{'app.navbar.home.icon' | translate}}" aria-hidden="true"></i>{{ 'app.navbar.home.name' | translate  }}</a>
+            <a class="navbar-item" routerLink="/search" [ngClass]="{'is-active': currentRoute ==='/search' ? true : false}"><i class="fa fa-{{'app.navbar.search.icon' | translate}}" aria-hidden="true"></i>{{ 'app.navbar.search.name' | translate  }}</a>
+            <a class="navbar-item" routerLink="/recent" [ngClass]="{'is-active': currentRoute ==='/recent' ? true : false}"><i class="fa fa-{{'app.navbar.recent.icon' | translate}}" aria-hidden="true"></i>{{ 'app.navbar.recent.name' | translate  }}</a>
+            <a class="navbar-item" routerLink="/share" [ngClass]="{'is-active': currentRoute ==='/share' ? true : false}"><i class="fa fa-{{'app.navbar.share.icon' | translate}}" aria-hidden="true"></i>{{ 'app.navbar.share.name' | translate  }}</a>
         </div>
     </div>
 </nav>

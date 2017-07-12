@@ -1,7 +1,7 @@
 @import "../../styles.scss";
-$breakpoint-tablet: 768px;
 @media (max-width: $breakpoint-tablet) {
     .navbar {
+        //navbar on bottom for small screens for ease of access
         position: fixed;
         bottom: 0;
         width: 100%;
@@ -11,9 +11,20 @@ $breakpoint-tablet: 768px;
         bottom: $navbar-height;
         box-shadow: none;
         width: 100%;
+        border-top: 2px rgba(55, 55, 55, 0.5) solid;
+        padding-top: 0;
     }
 }
 
 .fa {
     margin: 0 5px 0 5px;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 1);
+    color: #ffffff;
+}
+
+.navbar-menu {
+    background-color: rgba(255, 255, 255, 1);
 }
