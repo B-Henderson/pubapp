@@ -1,0 +1,19 @@
+@import "../../styles.scss";
+$breakpoint-tablet: 768px;
+@media (max-width: $breakpoint-tablet) {
+    .navbar {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    .navbar-menu {
+        position: fixed;
+        bottom: $navbar-height;
+        box-shadow: none;
+        width: 100%;
+    }
+}
+
+.fa {
+    margin: 0 5px 0 5px;
+}
