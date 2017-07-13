@@ -8,7 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class AppComponent {
   title = 'app';
-
+  testingbindings = 'testing bindings 1234';
   	constructor(translate: TranslateService) {
 		// this language will be used as a fallback when a translation isn't found in the current language
 		translate.setDefaultLang('en');

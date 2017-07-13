@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { ReferenceService } from './services/reference.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { SearchComponent } from './search/search.component';
 import { HistoryComponent } from './history/history.component';
 import { HomeComponent } from './home/home.component';
 import { ShareComponent } from './share/share.component';
+import { CardsComponent } from './cards/cards.component';
 
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http, 'assets/translations/', '-lang.json');
@@ -23,7 +25,8 @@ export function HttpLoaderFactory(http: Http) {
     SearchComponent,
     HistoryComponent,
     HomeComponent,
-    ShareComponent
+    ShareComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,7 @@ export function HttpLoaderFactory(http: Http) {
   exports: [
   	TranslateModule
   ],
-  providers: [],
+  providers: [ReferenceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

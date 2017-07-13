@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReferenceService } from '../services/reference.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  
+  constructor(public referenceData: ReferenceService) { 
 
-  constructor() { }
-
-  ngOnInit() {
   }
+
+
+  ngOnInit() {}
+
+      pubData = this.referenceData.getPubLists()
+      			.subscribe((data) => {
+      				console.log(data);
+      			},
+      			err => {
+      				console.log('THERE WAS AN ERROR', err);
+      			});
+  	
 
 }
