@@ -1,22 +1,15 @@
-<div class="card">
-    <div class="card-content">
-        <p class="title">
-            “There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.”
+<article class="media" routerLink="/pub/{{pub._id}}" *ngFor="let pub of pubs">
+    <figure class="media-left">
+        <p class="image is-128x128">
+            <img [src]="pub.picture">
         </p>
-        <p class="subtitle">
-            Jeff Atwood
-        </p>
+    </figure>
+    <div class="media-content">
+        <div class="content">
+            <p>
+                <strong>{{pub.name}}</strong> <small>Lat: {{pub.latitude}}</small> <small>Long: {{pub.longitude}}</small>
+                <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut.
+            </p>
+        </div>
     </div>
-    <footer class="card-footer">
-        <p class="card-footer-item">
-            <span>
-        View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
-      </span>
-        </p>
-        <p class="card-footer-item">
-            <span>
-        Share on <a href="#">Facebook</a>
-      </span>
-        </p>
-    </footer>
-</div>
+</article>

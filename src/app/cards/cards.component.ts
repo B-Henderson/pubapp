@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-cards',
@@ -10,7 +11,8 @@ export class CardsComponent implements OnInit {
   testfun = function(){
   	console.log('testing1234', this.pubs);
   }
-  constructor() { }
+  constructor(router: Router) { }
+
 
   ngOnInit() {
   	this.testfun();

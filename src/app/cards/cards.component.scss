@@ -1,0 +1,14 @@
+.media {
+    background-color: #fff;
+    margin: 10px 0;
+    height: 128px;
+    font-size: 14px;
+    padding-top: 0;
+    z-index: -1;
+    border: none;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.media-content {}

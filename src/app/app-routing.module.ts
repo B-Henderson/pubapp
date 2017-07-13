@@ -26,6 +26,16 @@ const routes: Routes = [
     {
   	path: 'share',
   	component: ShareComponent
+  },
+  {
+    path: 'pub',
+    component: SearchComponent,
+    children: [
+      {
+        path: ':id',
+        component: SearchComponent
+      }
+    ]
   }
 ];
 

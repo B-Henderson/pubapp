@@ -1,0 +1,6 @@
+@import "../../styles.scss";
+@media (max-width: $breakpoint-tablet) {
+    .main-container {
+        margin-bottom: $nav-height;
+    }
+}

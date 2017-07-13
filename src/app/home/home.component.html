@@ -1,6 +1,3 @@
-<p>
-    home works!
-</p>
-{{testingbindings}}
-<app-cards [pubs]="testingbindings
-"></app-cards>
+<div class="main-container" *ngIf="!loading">
+    <app-cards [pubs]="teststring"></app-cards>
+</div>
