@@ -1,13 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "~bulma";
-$metalic: #233237;
-$rust: #984B43;
-$yellow: #EAC67A;
-$blue: #18121E;
+$metalic: #8c8e90;
+$teal: #80b5bd;
+$dark-metalic: #67737e;
+$dark-grey: #67737e;
 $breakpoint-tablet: 768px;
 html {
-    background-color: $blue;
+    background-color: $metalic;
 }
 
 body {
