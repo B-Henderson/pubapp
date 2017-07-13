@@ -1,0 +1,22 @@
+{
+  "app": {
+    "navbar": {
+      "home": {
+        "name": "Home",
+        "icon": "home"
+      },
+      "search": {
+        "name": "Search",
+        "icon": "search"
+      },
+      "recent": {
+        "name": "Recent",
+        "icon": "history"
+      },
+      "share": {
+        "name": "Share",
+        "icon": "share"
+      }
+    }
+  }
+}
