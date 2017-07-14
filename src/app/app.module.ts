@@ -5,7 +5,7 @@ import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { ReferenceService } from './services/reference.service';
 import { CommonModule } from '@angular/common';  
-
+import { HaversineService } from "ng2-haversine";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { HistoryComponent } from './history/history.component';
 import { HomeComponent } from './home/home.component';
 import { ShareComponent } from './share/share.component';
 import { CardsComponent } from './cards/cards.component';
+import { DistancePipe } from './filters/distance.pipe';
 
 export function HttpLoaderFactory(http: Http) {
     return new TranslateHttpLoader(http, 'assets/translations/', '-lang.json');
@@ -28,7 +29,8 @@ export function HttpLoaderFactory(http: Http) {
     HistoryComponent,
     HomeComponent,
     ShareComponent,
-    CardsComponent
+    CardsComponent,
+    DistancePipe
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,7 @@ export function HttpLoaderFactory(http: Http) {
   exports: [
   	TranslateModule
   ],
-  providers: [ReferenceService],
+  providers: [ReferenceService, HaversineService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

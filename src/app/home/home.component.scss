@@ -1,6 +1,11 @@
 @import "../../styles.scss";
+.main-container {
+    margin: 0 40px;
+}
+
 @media (max-width: $breakpoint-tablet) {
     .main-container {
-        margin-bottom: $nav-height;
+        margin: 0 0;
+        margin-bottom: $nav-height * 1.5;
     }
 }
