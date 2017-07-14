@@ -6,6 +6,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { ReferenceService } from './services/reference.service';
 import { CommonModule } from '@angular/common';  
 import { HaversineService } from "ng2-haversine";
+import { DecimalPipe } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,7 +49,7 @@ export function HttpLoaderFactory(http: Http) {
   exports: [
   	TranslateModule
   ],
-  providers: [ReferenceService, HaversineService],
+  providers: [ReferenceService, HaversineService, DecimalPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

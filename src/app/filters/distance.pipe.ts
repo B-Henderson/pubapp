@@ -1,12 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { HaversineService, GeoCoord } from "ng2-haversine";
+import { DecimalPipe } from '@angular/common';
 
 @Pipe({
   name: 'distance'
 })
 export class DistancePipe implements PipeTransform {
 
-	    constructor(private haversine: HaversineService) {}
+	    constructor(private haversine: HaversineService, public decimalPipe: DecimalPipe) {}
 
   transform(lat: any, long: any, cPos: any): any {
   	let pubObj = {
@@ -19,8 +20,8 @@ export class DistancePipe implements PipeTransform {
   	}
   	
   	let distance = this.haversine.getDistanceInKilometers(selfObj, pubObj);
-    console.log('distance hopefully',distance);
-    return distance;
+
+    return this.decimalPipe.transform(distance, "1.2-2");
   }
 
 }
