@@ -4,6 +4,8 @@ import {SearchComponent} from './search/search.component';
 import {HomeComponent} from './home/home.component';
 import {HistoryComponent} from './history/history.component';
 import {ShareComponent} from './share/share.component';
+import { PubComponent } from './pub/pub.component';
+import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
   {
@@ -29,11 +31,11 @@ const routes: Routes = [
   },
   {
     path: 'pub',
-    component: SearchComponent,
+    component: PubComponent,
     children: [
       {
         path: ':id',
-        component: SearchComponent
+        component: ProductComponent
       }
     ]
   }
