@@ -9,6 +9,7 @@ import { SharedService } from '../services/shared.service';
 })
 export class NavComponent implements OnInit {
 menuState: boolean = false;
+searchPubs: string;
 currentRoute: string = '';
 	toggleMenu = () => {
 		this.menuState = (this.menuState === false ? true : false);
@@ -16,7 +17,7 @@ currentRoute: string = '';
 
 
 
-  constructor(private _router: Router, private sharedSerice: SharedService) {
+  constructor(private _router: Router, public sharedSerice: SharedService) {
     _router.events.subscribe((value) => {
       if( value instanceof NavigationEnd){       
         this.currentRoute = value.urlAfterRedirects;
