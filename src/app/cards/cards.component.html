@@ -1,15 +1,32 @@
-<article class="media" routerLink="/pub/{{pub._id}}" *ngFor="let pub of pubs">
-    <figure class="media-left">
-        <p class="image is-128x128">
-            <img [src]="pub.picture">
-        </p>
-    </figure>
-    <div class="media-content">
-        <div class="content">
-            <p>
-                <strong>{{pub.name}}</strong> <small>Lat: {{pub.latitude}}</small> <small>Long: {{pub.longitude}}</small>
-                <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut.
-            </p>
-        </div>
+<div *ngIf="!loading">
+    {{loading}}
+    <div class="box pub-box-display" routerLink="/pub/{{pub._id}}" *ngFor="let pub of pubs | filter:sharedSerice.searchTerm">
+        <article class="media">
+            <div class="media-left">
+                <figure class="image is-128x6128">
+                    <img src="http://bulma.io/images/placeholders/128x128.png" alt="Image">
+                </figure>
+            </div>
+            <div class="media-content">
+                <div class="content">
+                    <p>
+                        <strong>{{pub.name}}</strong> <small>{{pub.latitude | distance: pub.longitude:currentPosition }}Km</small>
+                    </p>
+                </div>
+                <nav class="level is-mobile">
+                    <div class="level-left">
+                        <a class="level-item">
+                            <span class="icon is-small"><i class="fa fa-reply"></i></span>
+                        </a>
+                        <a class="level-item">
+                            <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+                        </a>
+                        <a class="level-item">
+                            <span class="icon is-small"><i class="fa fa-heart"></i></span>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </article>
     </div>
-</article>
+</div>

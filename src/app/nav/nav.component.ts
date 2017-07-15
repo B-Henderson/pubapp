@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { Router, NavigationEnd  } from '@angular/router';
-
+import { SharedService } from '../services/shared.service';
 
 @Component({
   selector: 'app-nav',
@@ -9,6 +9,7 @@ import { Router, NavigationEnd  } from '@angular/router';
 })
 export class NavComponent implements OnInit {
 menuState: boolean = false;
+searchPubs: string;
 currentRoute: string = '';
 	toggleMenu = () => {
 		this.menuState = (this.menuState === false ? true : false);
@@ -16,7 +17,7 @@ currentRoute: string = '';
 
 
 
-  constructor(private _router: Router) {
+  constructor(private _router: Router, public sharedSerice: SharedService) {
     _router.events.subscribe((value) => {
       if( value instanceof NavigationEnd){       
         this.currentRoute = value.urlAfterRedirects;
@@ -24,6 +25,9 @@ currentRoute: string = '';
     })
 
    }
+     ngOnChanges(changes: SimpleChanges) {
+ 
+  }
 
   ngOnInit() {
 

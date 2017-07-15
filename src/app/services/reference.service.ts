@@ -9,9 +9,12 @@ export class ReferenceService {
 
 
   getPubLists(){
-  	console.log('inside service');
   	return this.http.get('assets/api/pubs.api.json')
   			.map((res:Response) => res.json())
 
+  };
+  getProductList(){
+  	return this.http.get('assets/api/products.api.json')
+  			.map((res:Response) => res.json())
   };
 }
