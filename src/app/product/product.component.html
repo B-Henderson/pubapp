@@ -1,9 +1,15 @@
 <div class="overlay" [ngClass]="{'is-hidden': recipt}">
-    <div class=" box popup-content ">
-        <div class="content popup-content ">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum sit consectetur ad porro quo, molestiae deserunt laudantium vero obcaecati voluptatibus, nobis nesciunt quam, blanditiis facere pariatur optio, voluptates autem atque.
-        </div>
-    </div>
+    <table class="table popup-content is-bordered">
+        <thead>
+            <tr>
+                <th class="thead">{{'app.product.table.header.item' | translate}}</th>
+                <th class="thead">{{'app.product.table.header.price' | translate}}</th>
+                <th class="thead">
+                    <abbr title="{{'app.product.table.header.quantity' | translate}}">Qty</abbr>
+                </th>
+            </tr>
+        </thead>
+    </table>
 </div>
 <div class="container is-products-container ">
     <span class="icon shopping-cart-button " (click)="recipt = !recipt ">
