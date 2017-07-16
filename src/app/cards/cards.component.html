@@ -1,10 +1,15 @@
-<div *ngIf="!loading">
+<div *ngIf="!loading && pubs">
     {{loading}}
     <div class="box pub-box-display" routerLink="/pub/{{pub._id}}" *ngFor="let pub of pubs | filter:sharedSerice.searchTerm">
         <article class="media">
             <div class="media-left">
-                <figure class="image is-128x6128">
-                    <img src="http://bulma.io/images/placeholders/128x128.png" alt="Image">
+                <figure class="is-hidden-desktop littleProfile image is-128x128">
+                    <img [src]="pub.picture" alt="Image">
+                </figure>
+                <figure class="is-hidden-touch image is-200x400">
+                    <div class="bigProfiles">
+                        <img [src]="pub.picture" alt="Image">
+                    </div>
                 </figure>
             </div>
             <div class="media-content">
@@ -13,13 +18,14 @@
                         <strong>{{pub.name}}</strong> <small>{{pub.latitude | distance: pub.longitude:currentPosition }}Km</small>
                     </p>
                 </div>
+                <div class="content is-hidden-touch">
+                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit illo, ipsa rerum ea dicta voluptatum numquam excepturi veritatis temporibus voluptatem, sed nobis quidem sequi amet quae iure atque esse architecto!</div>
+                    <div>Quas sequi delectus eos cupiditate, totam perferendis ratione aliquid obcaecati molestiae numquam, debitis modi, accusantium rerum esse vel reiciendis perspiciatis nisi ullam ut vero ipsum nam odio possimus exercitationem. Magnam.</div>
+                </div>
                 <nav class="level is-mobile">
                     <div class="level-left">
                         <a class="level-item">
                             <span class="icon is-small"><i class="fa fa-reply"></i></span>
-                        </a>
-                        <a class="level-item">
-                            <span class="icon is-small"><i class="fa fa-retweet"></i></span>
                         </a>
                         <a class="level-item">
                             <span class="icon is-small"><i class="fa fa-heart"></i></span>
@@ -30,3 +36,4 @@
         </article>
     </div>
 </div>
+<router-outlet></router-outlet>

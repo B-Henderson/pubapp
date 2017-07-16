@@ -1,61 +1,61 @@
 [{
     "longitude": "-91.641202",
     "latitude": "-67.224147",
-    "picture": "http://placehold.it/128x128",
+    "picture": "http://placehold.it/400x300",
     "name": "HARMONEY",
     "_id": "5967d24a5304f92ebf0ece5d"
 }, {
     "longitude": "-146.838197",
     "latitude": "-33.869594",
-    "picture": "http://placehold.it/128x128",
+    "picture": "http://placehold.it/400x300",
     "name": "QUAREX",
     "_id": "5967d24ae620e5368046fe52"
 }, {
     "longitude": "-91.870137",
     "latitude": "-45.611822",
-    "picture": "http://placehold.it/128x128",
+    "picture": "http://placehold.it/400x300",
     "name": "INQUALA",
     "_id": "5967d24a17ad9aeee43361c9"
 }, {
     "longitude": "24.286306",
     "latitude": "44.458282",
-    "picture": "http://placehold.it/128x128",
+    "picture": "http://placehold.it/400x300",
     "name": "NEPTIDE",
     "_id": "5967d24a350a5690cfa02d81"
 }, {
     "longitude": "-2.280688",
     "latitude": "-14.245519",
-    "picture": "http://placehold.it/128x128",
+    "picture": "http://placehold.it/400x300",
     "name": "EXIAND",
     "_id": "5967d24a69cc7aa38b8ce5fe"
 }, {
     "longitude": "-165.494999",
     "latitude": "65.137374",
-    "picture": "http://placehold.it/128x128",
+    "picture": "http://placehold.it/400x300",
     "name": "ZOSIS",
     "_id": "5967d24aa546e16d959b423d"
 }, {
     "longitude": "-142.005608",
     "latitude": "-34.905756",
-    "picture": "http://placehold.it/128 x128",
+    "picture": "http://placehold.it/400x300",
     "name": "UPLINX",
     "_id": "5967d24a5956262ae7f8a6da"
 }, {
     "longitude": "-18.966303",
     "latitude": "28.566962",
-    "picture": "http://placehold.it/128x128",
+    "picture": "http://placehold.it/400x300",
     "name": "UNIWORLD",
     "_id": "5967d24a6ac2fcfc48eb78ea"
 }, {
     "longitude": "121.519974",
     "latitude": "74.89686",
-    "picture": "http://placehold.it/128x128",
+    "picture": "http://placehold.it/400x300",
     "name": "MALATHION",
     "_id": "5967d24ae392bc0861162075"
 }, {
     "longitude": "-29.7267",
     "latitude": "7.566375",
-    "picture": "http://placehold.it/128x128",
+    "picture": "http://placehold.it/400x300",
     "name": "ISOSWITCH",
     "_id": "5967d24ae5bfdb26f5aa5302"
 }]

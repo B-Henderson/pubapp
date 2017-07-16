@@ -18,6 +18,9 @@ import { HomeComponent } from './home/home.component';
 import { ShareComponent } from './share/share.component';
 import { CardsComponent } from './cards/cards.component';
 import { DistancePipe } from './filters/distance.pipe';
+import { StorageFactoryService } from './services/storagefactory.service';
+import { PubComponent } from './pub/pub.component';
+import { ProductComponent } from './product/product.component';
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -33,7 +36,9 @@ export function HttpLoaderFactory(http: Http) {
     HomeComponent,
     ShareComponent,
     CardsComponent,
-    DistancePipe
+    DistancePipe,
+    PubComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,7 @@ export function HttpLoaderFactory(http: Http) {
   exports: [
   	TranslateModule
   ],
-  providers: [ReferenceService, HaversineService, DecimalPipe],
+  providers: [ReferenceService, HaversineService, DecimalPipe, StorageFactoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
