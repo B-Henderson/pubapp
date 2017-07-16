@@ -1,13 +1,15 @@
-<div *ngIf="!loading">
+<div *ngIf="!loading && pubs">
     {{loading}}
     <div class="box pub-box-display" routerLink="/pub/{{pub._id}}" *ngFor="let pub of pubs | filter:sharedSerice.searchTerm">
         <article class="media">
             <div class="media-left">
-                <!--  <figure class="is-hidden-desktop image is-128x128">
+                <figure class="is-hidden-desktop littleProfile image is-128x128">
                     <img [src]="pub.picture" alt="Image">
-                </figure> -->
+                </figure>
                 <figure class="is-hidden-touch image is-200x400">
-                    <img [src]="pub.picture" alt="Image">
+                    <div class="bigProfiles">
+                        <img [src]="pub.picture" alt="Image">
+                    </div>
                 </figure>
             </div>
             <div class="media-content">
@@ -24,9 +26,6 @@
                     <div class="level-left">
                         <a class="level-item">
                             <span class="icon is-small"><i class="fa fa-reply"></i></span>
-                        </a>
-                        <a class="level-item">
-                            <span class="icon is-small"><i class="fa fa-retweet"></i></span>
                         </a>
                         <a class="level-item">
                             <span class="icon is-small"><i class="fa fa-heart"></i></span>

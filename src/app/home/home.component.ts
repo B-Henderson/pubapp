@@ -32,10 +32,9 @@ export class HomeComponent implements OnInit {
       };
     }
     this.pubData = this.getpubs();
-    console.log('pubdata: ',this.pubData);
+    console.log('pubdata: ', this.pubData);
   }
-       ngOnChanges(changes: SimpleChanges) {
-       console.log('changes',changes);
+  ngOnChanges(changes: SimpleChanges) {
   }
 
 
@@ -50,9 +49,9 @@ export class HomeComponent implements OnInit {
       this.referenceData.getPubLists()
         .subscribe((data) => {
           this.loading = false;
-          returnData = data;
+          this.pubData = data;
           this.storage.setDataStorage('pub_ids', data);
-          
+
         },
         err => {
           console.log('THERE WAS AN ERROR', err);

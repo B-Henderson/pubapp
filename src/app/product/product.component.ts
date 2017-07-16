@@ -9,6 +9,7 @@ import * as _ from 'lodash';
 export class ProductComponent implements OnInit {
 	productList: any[];
 	shoppingCart: any[] = [];
+	recipt: boolean = true;
 	constructor(public referenceData: ReferenceService) { }
 
 	ngOnInit() {
