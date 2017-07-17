@@ -18,18 +18,6 @@ const routes: Routes = [
   	component: HomeComponent
   },
   {
-  	path: 'search',
-  	component: SearchComponent
-  },
-    {
-  	path: 'recent',
-  	component: HistoryComponent
-  },
-    {
-  	path: 'share',
-  	component: ShareComponent
-  },
-  {
     path: 'pub',
     component: PubComponent,
     children: [

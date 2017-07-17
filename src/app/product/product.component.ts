@@ -16,9 +16,9 @@ export class ProductComponent implements OnInit {
 	constructor(public referenceData: ReferenceService, private sharedSerice: SharedService) { }
 
 	ngOnInit() {
+		//on init get the products list
 		this.referenceData.getProductList()
-			.subscribe((data) => {
-				console.log(data);
+			.subscribe((data) => {				
 				this.productList = data;
 			},
 			err => {
@@ -26,6 +26,7 @@ export class ProductComponent implements OnInit {
 			});		
 	}
 
+	//add a drink to the recipt or if its already there increment the quantity
 	addDrink(drink) {
 
 		if (_.find(this.shoppingCart, function(o) {
@@ -42,6 +43,7 @@ export class ProductComponent implements OnInit {
 			this.shoppingCart.push(drink);
 		}		
 	};
+	//remove a drink from the recipt if it exists and if it is 0 remove the object from the recipt array
 	removeDrink(drink) {
 		if (_.find(this.shoppingCart, function(o) {
 			return o._id === drink._id;
@@ -60,6 +62,7 @@ export class ProductComponent implements OnInit {
 			return false;
 		}	
 	};
+	//calculate the total cost of the products
 	getTotalCost(){
 		let total = 0;
 

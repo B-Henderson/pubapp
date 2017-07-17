@@ -1,4 +1,4 @@
-<div *ngIf="!loading && pubs">
+<div *ngIf="pubs">
     <div class="box pub-box-display" routerLink="/pub/{{pub._id}}" *ngFor="let pub of pubs | filter:sharedSerice.searchTerm">
         <article class="media">
             <div class="media-left">
@@ -14,7 +14,7 @@
             <div class="media-content">
                 <div class="content">
                     <p>
-                        <strong>{{pub.name}}</strong> <small>{{pub.latitude | distance: pub.longitude:currentPosition }}Km</small>
+                        <strong>{{pub.name}}</strong> <small *ngIf="currentPosition">{{pub.latitude | distance: pub.longitude:currentPosition }}Km</small>                     
                     </p>
                 </div>
                 <div class="content is-hidden-touch">

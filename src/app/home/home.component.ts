@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         this.location = position.coords;
-
       });
     } else {
       console.log('cant get location');
@@ -32,7 +31,7 @@ export class HomeComponent implements OnInit {
       };
     }
     this.pubData = this.getpubs();
-    console.log('pubdata: ', this.pubData);
+
   }
   ngOnChanges(changes: SimpleChanges) {
   }
@@ -41,6 +40,7 @@ export class HomeComponent implements OnInit {
 
   getpubs() {
     let returnData: any = '';
+    //get the pub list from local storage if possible else get request
     if (this.storage.getDataStorage('pub_ids')) {
       returnData = this.storage.getDataStorage('pub_ids');
       this.loading = false;
