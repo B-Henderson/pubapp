@@ -7,7 +7,8 @@ import { SharedService } from '../services/shared.service';
 	styleUrls: ['./pub.component.scss']
 })
 export class PubComponent implements OnInit {
-	constructor(public referenceData: ReferenceService, private sharedSerice: SharedService) { }
+	searchDrinks: string ='';
+	constructor(public referenceData: ReferenceService, public sharedSerice: SharedService) { }
 	ngOnInit() {
 	}
 
