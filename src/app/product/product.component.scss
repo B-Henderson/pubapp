@@ -14,10 +14,21 @@
 .shopping-cart-button {
     background-color: $primary;
     border: 1px solid $teal;
-    z-index: 5;
+    z-index: 10;
     height: 6rem;
-    width: 10rem;
+    width: 9.5rem;
+    position: fixed;
+    right: 0rem;
+    bottom: 0rem;
+    
 }
+.popup-content {
+    margin: 20px;
+    width: 80%;
+    height:100%;
+    padding: 20px;
+}
+
 
 @media (max-width: $breakpoint-tablet) {
     .shopping-cart-button {
@@ -34,18 +45,21 @@
     .is-products-container {
         margin-top: 1rem;
     }
+    .popup-content {
+    margin-top: auto;
+    max-width: 75% !important;
+    height: 100%;
+    margin: 0;
+}
+
 }
 
 .overlay {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-color: rgba(192, 192, 192, 0.75);
     z-index: 10;
     position: fixed;
+    top:0;
 }
 
-.popup-content {
-    margin-top: auto;
-    max-width: 75% !important;
-    height: 100%;
-}

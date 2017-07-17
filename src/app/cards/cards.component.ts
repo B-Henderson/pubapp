@@ -15,16 +15,13 @@ export class CardsComponent implements OnInit {
   @Input() searchPubs: string;
   loading: boolean =_.isNil(this.currentPosition); 
 
-
-  testfun = function(){
-  }
   constructor(router: Router, private sharedSerice: SharedService) { }
+  //watch for changes when currentPosition is populate loading is false
   ngOnChanges(changes: SimpleChanges) {
-    this.loading =_.isNil(this.currentPosition);
+    this.loading =_.isNil(this.currentPosition);    
   }
 
   ngOnInit() {
-  	this.testfun();
   }
 
 }

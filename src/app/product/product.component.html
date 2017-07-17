@@ -1,45 +1,71 @@
 <div class="overlay" [ngClass]="{'is-hidden': recipt}">
-    <table class="table popup-content is-bordered">
-        <thead>
-            <tr>
-                <th class="thead">{{'app.product.table.header.item' | translate}}</th>
-                <th class="thead">{{'app.product.table.header.price' | translate}}</th>
-                <th class="thead">
-                    <abbr title="{{'app.product.table.header.quantity' | translate}}">Qty</abbr>
-                </th>
-            </tr>
-        </thead>
-    </table>
+  <table class="table popup-content is-bordered table is-narrow table is-striped">
+    <thead>
+      <tr>
+        <th class="thead">{{'app.product.table.header.item' | translate}}</th>
+        <th class="thead">{{'app.product.table.header.price' | translate}}</th>
+        <th class="thead">
+          <abbr title="{{'app.product.table.header.quantity' | translate}}">Qty</abbr>
+        </th>
+      </tr>
+    </thead>
+    <tfoot>
+        <tr>
+        <th>Total: </th>
+        <th>{{getTotalCost()}}</th>
+        <th><button class="button is-primary is-pulled-right">Checkout</button></th>
+            
+        </tr>
+    </tfoot>
+    <tbody *ngIf="shoppingCart.length">
+        <tr *ngFor="let item of shoppingCart">
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.quantity}}</td>
+        </tr>
+    </tbody>
+  </table>
 </div>
 <div class="container is-products-container ">
-    <span class="icon shopping-cart-button " (click)="recipt = !recipt ">
-  <i class="fa fa-shopping-cart "></i>
+ <span *ngIf="recipt" class="icon shopping-cart-button is-hidden-touch is-large" (click)="recipt = !recipt ">
+  <i class="fa fa-shopping-cart icon "></i>
+</span>  
+  <span *ngIf="!recipt" class="icon shopping-cart-button is-hidden-touch is-large" (click)="recipt = !recipt ">
+  <i class="fa fa-times icon "></i>
+</span>  
+<span *ngIf="recipt" class="icon shopping-cart-button is-hidden-desktop" (click)="recipt = !recipt ">
+  <i class="fa fa-shopping-cart icon "></i>
 </span>
-    <div class="columns is-multiline ">
-        <div class="column is-one-third " *ngFor="let drink of productList ">
-            <div class="card ">
-                <div class="card-image ">
-                    <figure class="image is-4by2 ">
-                        <img [src]="drink.image " alt="Image ">
-                    </figure>
-                </div>
-                <div class="card-content ">
-                    <div class="media ">
-                        <div class="media-content ">
-                            <h1 class="title is-1 ">{{drink.name}}</h1>
-                        </div>
-                    </div>
-                    <div class=" columns is-mobile ">
-                        <div class="column is-one-quarter ">
-                            <button class="button is-primary is-fullwidth is-fullheight is-large " (click)="addDrink(drink) ">+</button>
-                        </div>
-                        <input class="input quantity column is-half " type="text " placeholder="0 " [(ngModel)]="drink.quantity ">
-                        <div class="column is-one-quarter ">
-                            <button class="button is-primary is-fullwidth is-fullheight is-large " (click)="removeDrink(drink) " [disabled]="!drink.quantity ">-</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<span *ngIf="!recipt" class="icon shopping-cart-button is-hidden-desktop" (click)="recipt = !recipt ">
+  <i class="fa fa-times icon "></i>
+</span>
+
+  <div class="columns is-multiline "*ngIf="productList">
+    <div class="column is-one-third " *ngFor="let drink of productList | filter:sharedSerice.searchTerm">
+      <div class="card ">
+      {{shoppingCart}}
+        <div class="card-image ">
+          <figure class="image is-4by2 ">
+            <img [src]="drink.image " alt="Image ">
+          </figure>
         </div>
+        <div class="card-content ">
+          <div class="media ">
+            <div class="media-content ">
+              <h1 class="title is-1 ">{{drink.name}}</h1>
+            </div>
+          </div>
+          <div class=" columns is-mobile ">
+            <div class="column is-one-quarter ">
+              <button class="button is-primary is-fullwidth is-fullheight is-large " (click)="removeDrink(drink) " [disabled]="!drink.quantity ">-</button>
+            </div>
+            <input class="input quantity column is-half " type="text " placeholder="0 " [(ngModel)]="drink.quantity ">
+            <div class="column is-one-quarter ">
+              <button class="button is-primary is-fullwidth is-fullheight is-large " (click)="addDrink(drink) ">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

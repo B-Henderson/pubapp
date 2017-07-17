@@ -3,7 +3,7 @@ import { ReferenceService } from '../services/reference.service';
 import { CommonModule } from '@angular/common';
 import { HaversineService, GeoCoord } from "ng2-haversine";
 import { StorageFactoryService } from '../services/storagefactory.service';
-
+import { SharedService } from '../services/shared.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,7 +12,7 @@ import { StorageFactoryService } from '../services/storagefactory.service';
 export class HomeComponent implements OnInit {
   loading: boolean = true;
   location: any;
-  constructor(public referenceData: ReferenceService, private haversineService: HaversineService, private storage: StorageFactoryService) {
+  constructor(public referenceData: ReferenceService, private haversineService: HaversineService, private storage: StorageFactoryService, private sharedSerice: SharedService) {
 
   }
   pubData: any[];
@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         this.location = position.coords;
-
       });
     } else {
       console.log('cant get location');
@@ -32,7 +31,7 @@ export class HomeComponent implements OnInit {
       };
     }
     this.pubData = this.getpubs();
-    console.log('pubdata: ', this.pubData);
+
   }
   ngOnChanges(changes: SimpleChanges) {
   }
@@ -41,6 +40,7 @@ export class HomeComponent implements OnInit {
 
   getpubs() {
     let returnData: any = '';
+    //get the pub list from local storage if possible else get request
     if (this.storage.getDataStorage('pub_ids')) {
       returnData = this.storage.getDataStorage('pub_ids');
       this.loading = false;
