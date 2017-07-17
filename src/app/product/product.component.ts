@@ -20,7 +20,7 @@ export class ProductComponent implements OnInit {
 			},
 			err => {
 				console.log(err)
-			});
+			});		
 	}
 
 	addDrink(drink) {
@@ -37,8 +37,7 @@ export class ProductComponent implements OnInit {
 		} else {
 			drink.quantity = 1;
 			this.shoppingCart.push(drink);
-		}
-
+		}		
 	};
 	removeDrink(drink) {
 		if (_.find(this.shoppingCart, function(o) {
@@ -48,15 +47,24 @@ export class ProductComponent implements OnInit {
 				return o._id === drink._id;
 			});
 
-			if (this.shoppingCart[i].quantity > 0) {
+			if (this.shoppingCart[i].quantity > 1) {
 				this.shoppingCart[i].quantity--;
 			} else {
-				this.shoppingCart.splice(i, 1);
+				this.shoppingCart[i].quantity--;
+				this.shoppingCart.splice(i, 1);				
 			}
 		} else {
 			return false;
-		}
+		}	
 	};
+	getTotalCost(){
+		let total = 0;
+
+		_.forEach(this.shoppingCart, function(val){		
+			return total += val.price * val.quantity;
+		});		
+		return total;
+	}
 }
 
 
