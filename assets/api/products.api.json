@@ -1,0 +1,51 @@
+[{
+    "image": "http://placehold.it/400x300",
+    "name": "Balanced Six",
+    "_id": "596a0e93365302c40ff36688",
+    "price": 4.50
+}, {
+    "image": "http://placehold.it/400x300",
+    "name": "Garlic Fluffy",
+    "_id": "596a0e9311e224a7a1cf8f98",
+    "price": 5.50
+}, {
+    "image": "http://placehold.it/400x300",
+    "name": "Vanillabean Hell",
+    "_id": "596a0e939c54e28ba7ed7d3b",
+    "price": 4.75
+}, {
+    "image": "http://placehold.it/400x300",
+    "name": "Tonic Storm",
+    "_id": "596a0e938248b0dbd87a56a1",
+    "price": 3.50
+}, {
+    "image": "http://placehold.it/400x300",
+    "name": "Sticky Talon",
+    "_id": "596a0e93e3b0c88df4d41f5c",
+    "price": 2.50
+}, {
+    "image": "http://placehold.it/400x300",
+    "name": "Kiwi Moonshine",
+    "_id": "596a0e931d97ee3c37e5486d",
+    "price": 4.90
+}, {
+    "image": "http://placehold.it/400x300",
+    "name": "Nutty Cider",
+    "_id": "596a0e93b32838984feb2ae4",
+    "price": 4.50
+}, {
+    "image": "http://placehold.it/400x300",
+    "name": "Numb Ticker",
+    "_id": "596a0e93402d4495e44f056e",
+    "price": 8.50
+}, {
+    "image": "http://placehold.it/400x300",
+    "name": "Cranberry Zombie",
+    "_id": "596a0e93206a7f6e711fb3c4",
+    "price": 7.50
+}, {
+    "image": "http://placehold.it/400x300",
+    "name": "Chestnut Blitz",
+    "_id": "596a0e93c2ba333e3f4e412a",
+    "price": 4.00
+}]
