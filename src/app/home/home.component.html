@@ -1,3 +1,4 @@
 <div class="main-container" *ngIf="!loading">
+    <input type="text" placeholder="Search for Pubs" class="input home-filter" [(ngModel)]="searchPubs" (ngModelChange)="sharedSerice.setSearchterm(searchPubs)">
     <app-cards [pubs]="pubData" [currentPosition]="location"></app-cards>
 </div>

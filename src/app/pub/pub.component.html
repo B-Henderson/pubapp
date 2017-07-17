@@ -1,1 +1,2 @@
-<router-outlet></router-outlet>
+<input type="text" placeholder="Search for Drinks" class="input pub-filter" [(ngModel)]="searchDrinks" (ngModelChange)="sharedSerice.setSearchterm(searchDrinks)">
+<router-outlet ></router-outlet>

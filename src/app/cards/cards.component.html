@@ -1,5 +1,4 @@
 <div *ngIf="!loading && pubs">
-    {{loading}}
     <div class="box pub-box-display" routerLink="/pub/{{pub._id}}" *ngFor="let pub of pubs | filter:sharedSerice.searchTerm">
         <article class="media">
             <div class="media-left">

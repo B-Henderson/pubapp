@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReferenceService } from '../services/reference.service';
+import { SharedService } from '../services/shared.service';
 @Component({
   selector: 'app-pub',
   templateUrl: './pub.component.html',
@@ -8,7 +9,7 @@ import { ReferenceService } from '../services/reference.service';
 export class PubComponent implements OnInit {
 	productList: any;
 
-  constructor(public referenceData: ReferenceService) { }
+  constructor(public referenceData: ReferenceService, private sharedSerice: SharedService) { }
 
   ngOnInit() {
   }

@@ -3,7 +3,7 @@ import { ReferenceService } from '../services/reference.service';
 import { CommonModule } from '@angular/common';
 import { HaversineService, GeoCoord } from "ng2-haversine";
 import { StorageFactoryService } from '../services/storagefactory.service';
-
+import { SharedService } from '../services/shared.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,7 +12,7 @@ import { StorageFactoryService } from '../services/storagefactory.service';
 export class HomeComponent implements OnInit {
   loading: boolean = true;
   location: any;
-  constructor(public referenceData: ReferenceService, private haversineService: HaversineService, private storage: StorageFactoryService) {
+  constructor(public referenceData: ReferenceService, private haversineService: HaversineService, private storage: StorageFactoryService, private sharedSerice: SharedService) {
 
   }
   pubData: any[];

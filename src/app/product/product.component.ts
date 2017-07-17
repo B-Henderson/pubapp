@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ReferenceService } from '../services/reference.service'
 import * as _ from 'lodash';
+import { SharedService } from '../services/shared.service';
 @Component({
 	selector: 'app-product',
 	templateUrl: './product.component.html',
 	styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
+	@Input() searchTerm;
 	productList: any[];
 	shoppingCart: any[] = [];
 	recipt: boolean = true;
-	constructor(public referenceData: ReferenceService) { }
+
+	constructor(public referenceData: ReferenceService, private sharedSerice: SharedService) { }
 
 	ngOnInit() {
 		this.referenceData.getProductList()

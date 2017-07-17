@@ -27,11 +27,21 @@
   </table>
 </div>
 <div class="container is-products-container ">
-  <span class="icon shopping-cart-button" (click)="recipt = !recipt ">
-  <i class="fa fa-shopping-cart "></i>
+ <span *ngIf="recipt" class="icon shopping-cart-button is-hidden-touch is-large" (click)="recipt = !recipt ">
+  <i class="fa fa-shopping-cart icon "></i>
+</span>  
+  <span *ngIf="!recipt" class="icon shopping-cart-button is-hidden-touch is-large" (click)="recipt = !recipt ">
+  <i class="fa fa-times icon "></i>
+</span>  
+<span *ngIf="recipt" class="icon shopping-cart-button is-hidden-desktop" (click)="recipt = !recipt ">
+  <i class="fa fa-shopping-cart icon "></i>
 </span>
-  <div class="columns is-multiline ">
-    <div class="column is-one-third " *ngFor="let drink of productList ">
+<span *ngIf="!recipt" class="icon shopping-cart-button is-hidden-desktop" (click)="recipt = !recipt ">
+  <i class="fa fa-times icon "></i>
+</span>
+
+  <div class="columns is-multiline "*ngIf="productList">
+    <div class="column is-one-third " *ngFor="let drink of productList | filter:sharedSerice.searchTerm">
       <div class="card ">
       {{shoppingCart}}
         <div class="card-image ">

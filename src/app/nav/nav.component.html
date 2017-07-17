@@ -13,7 +13,6 @@
     <div class="navbar-menu" [ngClass]="{'is-active': menuState}">
         <div class="navbar-end ">
             <a class="navbar-item" routerLink="/home" [ngClass]="{'is-active': currentRoute ==='/home' ? true : false}"><span class="icon is-small"><i class="fa fa-{{'app.navbar.home.icon' | translate}}" aria-hidden="true"></i></span>{{ 'app.navbar.home.name' | translate  }}</a>
-            <input type="text" [(ngModel)]="searchPubs" (ngModelChange)="sharedSerice.setSearchterm(searchPubs)">
             <a class="navbar-item" [ngClass]="{'is-active': currentRoute ==='/search' ? true : false}"><span class="icon is-small"><i class="fa fa-{{'app.navbar.search.icon' | translate}}" aria-hidden="true"></i></span>{{ 'app.navbar.search.name' | translate  }}</a>
             <a class="navbar-item" routerLink="/recent" [ngClass]="{'is-active': currentRoute ==='/recent' ? true : false}"><span class="icon is-small"><i class="fa fa-{{'app.navbar.recent.icon' | translate}}" aria-hidden="true"></i></span>{{ 'app.navbar.recent.name' | translate  }}</a>
             <a class="navbar-item" routerLink="/share" [ngClass]="{'is-active': currentRoute ==='/share' ? true : false}"><span class="icon is-small"><i class="fa fa-{{'app.navbar.share.icon' | translate}}" aria-hidden="true"></i></span>{{ 'app.navbar.share.name' | translate  }}</a>
