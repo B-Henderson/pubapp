@@ -1,5 +1,5 @@
 # pubapp
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1. It is a small project example for searching pubs and giving a distance between the device and the pub location.
 
 ## Development server
 
@@ -25,3 +25,8 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## Demo
+
+A demo can be found at https://b-henderson.github.io/pubapp/home
