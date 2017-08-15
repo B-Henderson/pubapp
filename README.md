@@ -1,5 +1,5 @@
 # pubapp
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1. It is a small project example for searching pubs and giving a distance between the device and the pub location.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1. It is a small project example for searching pubs and giving a distance between the device and the pub location. The idea is to allow ordering drinks on the phone that can be shown to the bartender either payed or not. Styled using Bulma.io
 
 ## Development server
 
